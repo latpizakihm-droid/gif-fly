@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap');
+
+body {
+    margin: 0;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* MAIN ALERT (LEBIH KECIL) */
+.alert-box {
+    position: relative;
+    width: 520px;              /* sebelumnya 800px */
+    padding: 20px 25px 20px 130px;  /* lebih compact */
+    margin: 120px auto;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+    overflow: hidden;
+    animation: popIn 0.5s ease-out;
+    box-shadow: 0 0 25px rgba(255,215,0,0.5);
+    border: 2px solid gold;
+}
+
+/* POP ANIMATION */
+@keyframes popIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* LIGHT SWEEP */
+.alert-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,215,0,0.4),
+        transparent
+    );
+    transform: skewX(-20deg);
+    animation: sweep 3s infinite;
+}
+
+@keyframes sweep {
+    0% { left: -150%; }
+    100% { left: 150%; }
+}
+
+/* MASCOT (LEBIH KECIL) */
+.mascot {
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+    width: 130px;   /* sebelumnya 220px */
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 8px 15px rgba(0,0,0,0.7));
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+/* CONTENT */
+.content {
+    text-align: center;
+    color: white;
+}
+
+.media {
+    max-width: 120px;   /* lebih kecil */
+    margin-bottom: 8px;
+}
+
+.title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: gold;
+    margin-bottom: 5px;
+}
+
+.main {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.amount {
+    color: #FFD700;
+    font-size: 1.3rem;
+    text-shadow: 0 0 15px #FFD700;
+}
+
+.donator {
+    color: #FFCC00;
+}
+
+.message {
+    margin-top: 6px;
+    font-size: 0.85rem;
+}
